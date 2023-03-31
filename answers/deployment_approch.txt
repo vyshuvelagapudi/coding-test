@@ -1,0 +1,20 @@
+Problem Statement: Assume you are asked to get your code running in the cloud using AWS. What tools and AWS services would you use to deploy the API, database, and a scheduled version of your data ingestion code? Write up a description of your approach.
+
+To deploy the API, database, and scheduled version of the data ingestion code in AWS, I would use the following tools and services:
+1. AWS Elastic Beanstalk or AWS Lambda: Elastic Beanstalk is a Platform-as-a-Service (PaaS) that makes it easy to deploy, manage, and scale web applications. It supports a variety of programming languages and platforms. AWS Lambda is a Function-as-a-Service (FaaS) that allows running code without the need to manage servers. It supports multiple languages and can be triggered by events or scheduled using AWS CloudWatch Events.
+2. Amazon RDS: Amazon RDS is a managed relational database service that supports multiple database engines, including PostgreSQL and MySQL, which are suitable for the data models designed in the exercise.
+3. AWS CloudFormation: AWS CloudFormation provides a way to manage AWS resources as code. I can define a CloudFormation template that includes the Elastic Beanstalk or Lambda function, the RDS database, and other required resources, such as VPC, subnets, security groups, and IAM roles.
+4. AWS CodePipeline: AWS CodePipeline is a continuous delivery service that automates the building, testing, and deployment of applications. I can use it to create a pipeline that automatically deploys the code changes to the Elastic Beanstalk or Lambda function whenever I push changes to the code repository.
+5. AWS CloudWatch: AWS CloudWatch provides monitoring and logging for AWS resources and applications. I can use CloudWatch to monitor the Elastic Beanstalk or Lambda function and the RDS database, and set up alarms to notify me when there are any issues.
+6. AWS S3: AWS S3 provides a secure, scalable, and highly available object storage service. I can use it to store the weather data files and access them from the data ingestion code running in Elastic Beanstalk or Lambda function.
+7. AWS EventBridge: AWS EventBridge is a serverless event bus that makes it easy to integrate applications using events. I can use it to schedule the data ingestion code to run periodically using AWS CloudWatch Events.
+
+My approach to deploying the API, database, and scheduled version of the data ingestion code would be as follows:
+1. Create an AWS Elastic Beanstalk or Lambda function for the REST API and deploy the API code.
+2. Create an Amazon RDS database instance for the weather data records and configure the connection settings for the API to use.
+3. Create an AWS CloudFormation template that includes the Elastic Beanstalk or Lambda function, the RDS database, and other required resources, such as VPC, subnets, security groups, and IAM roles.
+4. Use AWS CodePipeline to create a pipeline that automatically deploys the code changes to the Elastic Beanstalk or Lambda function whenever there are changes to the code repository.
+5. Set up monitoring and logging using AWS CloudWatch for the Elastic Beanstalk or Lambda function and the RDS database, and configure alarms to notify me when there are any issues.
+6. Use AWS S3 to store the weather data files and access them from the data ingestion code running in Elastic Beanstalk or Lambda function.
+7. Use AWS EventBridge to schedule the data ingestion code to run periodically using AWS CloudWatch Events.
+By following this approach, I can easily deploy and manage the API, database, and data ingestion code in AWS, and ensure they are secure, scalable, and highly available.
